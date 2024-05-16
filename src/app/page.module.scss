@@ -1,0 +1,24 @@
+@import "./styles/globalSass.module.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.main {
+  background-color: #f9f9f9;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 60px;
+}
+.productSkeletonContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 2fr));
+  gap: 10px;
+}

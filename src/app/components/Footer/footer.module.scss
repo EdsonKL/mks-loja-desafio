@@ -1,0 +1,10 @@
+@import "../../styles/globalSass.module.scss";
+
+.footer{
+    height: 34px;
+    background-color: $secondary-background-color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

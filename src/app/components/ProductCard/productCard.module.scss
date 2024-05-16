@@ -1,0 +1,42 @@
+@import "../../styles/globalSass.module.scss";
+
+.card {
+  background-color: $primary-background-color;
+  min-width: 290px;
+  height: 365px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px rgb(109, 109, 109);
+  
+}
+.contentCard {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  p{
+    height: 98px;
+    font-weight: 300;
+  }
+}
+.titlePrice {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  span{
+    background-color: $third-background-color;
+    height: 28px;
+    padding: 6px;
+    border-radius: 5px;
+    color: $primary-text-color;
+    font-weight: 700;
+  }
+}
+

@@ -1,0 +1,44 @@
+@import "../../styles/globalSass.module.scss";
+
+.container{
+    color: $primary-text-color;
+
+    background-color: $primary-color;
+    height: 101px;
+    padding: 12px 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    h1{
+        font-weight: bold;
+        font-size: 40px;
+    }
+    p{
+        font-size: 20px;
+        padding-bottom: 7px;
+        font-weight: 300;
+    }
+}
+.buttonCart{
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 0;
+    background-color: $primary-background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 18px;
+    span{
+        font-size: 15px;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+}
