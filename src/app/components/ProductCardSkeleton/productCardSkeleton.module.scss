@@ -19,12 +19,15 @@
   margin: 0 auto;
   margin-bottom: 10px;
   border-radius: 10px;
+  animation: loading 0.5s infinite linear alternate-reverse;
+
 }
 
 .productCardSkeletonInfo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .productCardSkeletonTitle {
@@ -33,6 +36,8 @@
   background-color: #505050;
   margin-bottom: 10px;
   border-radius: 10px;
+  animation: loading 0.5s infinite linear alternate-reverse;
+
 }
 
 .productCardSkeletonPrice {
@@ -41,6 +46,8 @@
   background-color: #505050;
   margin-bottom: 10px;
   border-radius: 10px;
+  animation: loading 0.5s infinite linear alternate-reverse;
+
 }
 
 .productCardSkeletonDescription {
@@ -48,4 +55,17 @@
   height: 90px;
   background-color: #505050;
   border-radius: 10px;
+  animation: loading 0.5s infinite linear alternate-reverse;
+  // transition: all 0.5s ease;
+}
+@keyframes loading {
+  0% {
+    background-color: #444; /* tom mais escuro */
+  }
+  50% {
+    background-color: #555; /* tom intermediário */
+  }
+  100% {
+    background-color: #666; /* tom mais claro */
+  }
 }

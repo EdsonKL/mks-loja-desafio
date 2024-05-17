@@ -1,9 +1,8 @@
-import { Product } from "@/app/page";
+import { Product } from "@/app/components/Main/index";
 import Image from "next/image";
 import styles from "./productCard.module.scss";
-import Button from "../Button";
-import { Suspense, useContext } from "react";
-import ProductCardSkeleton from "../ProductCardSkeleton";
+import ButtonProduct from "../ButtonProduct";
+import { useContext } from "react";
 import { appContext } from "@/app/contexts/context";
 
 function ProductCard({
@@ -14,14 +13,17 @@ function ProductCard({
   price,
   quantity,
 }: Product) {
+  // Formatação do valor do produto para BRL
   let priceNumber: string = parseInt(price).toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 0,
   });
 
+  // Context para receber e alterar dados do carrinho
   const { cartItems, setCartItems } = useContext(appContext);
 
+  // Função responsável por adicionar novos itens ao carrinho
   const handleAddCart = () =>
     setCartItems([
       ...cartItems,
@@ -29,19 +31,17 @@ function ProductCard({
     ]);
 
   return (
-    <Suspense fallback={<ProductCardSkeleton />}>
-      <div className={styles.card} key={id}>
-        <div className={styles.contentCard}>
-          <Image src={photo} alt="photo" width={130} height={130} />
-          <div className={styles.titlePrice}>
-            <h2>{name}</h2>
-            <span>{priceNumber}</span>
-          </div>
-          <p>{description}</p>
+    <div className={styles.card} key={id}>
+      <div className={styles.contentCard}>
+        <Image src={photo} alt="photo" width={130} height={130} />
+        <div className={styles.titlePrice}>
+          <h2>{name}</h2>
+          <span>{priceNumber}</span>
         </div>
-        <Button title="Comprar" onClick={() => handleAddCart()} />
+        <p>{description}</p>
       </div>
-    </Suspense>
+      <ButtonProduct title="Comprar" onClick={() => handleAddCart()} />
+    </div>
   );
 }
 

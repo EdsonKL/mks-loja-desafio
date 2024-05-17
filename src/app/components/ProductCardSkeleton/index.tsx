@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./productCardSkeleton.module.scss";
 
 function ProductCardSkeleton() {
+  // Skeleton para carregamento dos produtos
   return (
     <div className={styles.productCardSkeleton}>
       <div className={styles.productCardSkeletonImage}></div>

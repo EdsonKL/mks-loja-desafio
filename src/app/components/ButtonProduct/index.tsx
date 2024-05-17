@@ -3,13 +3,14 @@ import React from "react";
 import styles from "./button.module.scss";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 
-function Button({title, onClick}: any) {
+// Criação do botão "comprar" do card do item da loja
+function ButtonProduct({ title, onClick }: any) {
   return (
     <button className={styles.buttonCard} onClick={onClick}>
       <ShoppingBagIcon />
-      <span>{title}</span>
+      <p>{title}</p>
     </button>
   );
 }
 
-export default Button;
+export default ButtonProduct;

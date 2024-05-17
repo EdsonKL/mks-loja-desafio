@@ -1,0 +1,23 @@
+@import "../../styles/globalSass.module.scss";
+
+.buttonCart{
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 0;
+    background-color: $primary-background-color;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 18px;
+    span{
+        font-size: 15px;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+    &:hover{
+        background-color: $fourth-background-color
+        
+    }
+}

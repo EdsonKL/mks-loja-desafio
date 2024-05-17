@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./cartItem.module.scss";
 import Image from "next/image";
 
+
+// Criação de componente para exibição de items do carrinho
 function CartItem({ photo, title, price, quantity }: any) {
   return (
     <section className={styles.cardItem}>
