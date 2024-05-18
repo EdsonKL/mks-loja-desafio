@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./productCard.module.scss";
 import ButtonProduct from "../ButtonProduct";
 import { useContext } from "react";
-import { appContext } from "@/app/contexts/context";
+import { appContext, AppContextType } from "@/app/contexts/context";
 
 function ProductCard({
   id,
@@ -21,14 +21,32 @@ function ProductCard({
   });
 
   // Context para receber e alterar dados do carrinho
-  const { cartItems, setCartItems } = useContext(appContext);
+  const { cartItems, setCartItems } = useContext<AppContextType>(appContext);
 
   // Função responsável por adicionar novos itens ao carrinho
-  const handleAddCart = () =>
+  const handleAddCart = (): void => {
+    // if (!cartItems.filter((product) => product.id == id)) {
+    // return console.log("já tem");
+    // }
+    const itemIsInCart = cartItems.some((product) => product.id == id)
+    if(itemIsInCart){
+
+     return console.log("já tem")
+     // setCartItems([
+      //   ...cartItems,
+      //   { id, name, description, photo, price, quantity },
+      // ]); 
+    }
     setCartItems([
       ...cartItems,
       { id, name, description, photo, price, quantity },
-    ]);
+    ]); 
+    return console.log("n tem")    // const filtro = cartItems.filter((product) => product.id == id);
+    
+    // console.log(filtro);
+
+    // return console.log("n tem");
+  };
 
   return (
     <div className={styles.card} key={id}>

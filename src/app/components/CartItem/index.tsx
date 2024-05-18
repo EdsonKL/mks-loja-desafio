@@ -2,9 +2,16 @@ import React from "react";
 import styles from "./cartItem.module.scss";
 import Image from "next/image";
 
+// Definindo os tipos das props
+interface CartItemProps {
+  photo: string;
+  title: string;
+  price: number;
+  quantity: number;
+}
 
 // Criação de componente para exibição de items do carrinho
-function CartItem({ photo, title, price, quantity }: any) {
+function CartItem({ photo, title, price, quantity }: CartItemProps) {
   return (
     <section className={styles.cardItem}>
       <Image

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import ProductCardSkeleton from "../ProductCardSkeleton";
 import ProductCard from "../ProductCard";
@@ -6,6 +6,9 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import styles from "./main.module.scss";
 
+interface ApiResponse {
+  products: Product[];
+}
 
 // Interface para receber os produtos
 export interface Product {
@@ -21,7 +24,7 @@ function Main() {
   // Função para buscar os produtos na API
   async function getData() {
     const response = await axios
-      .get(
+      .get<ApiResponse>(
         "https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=50&sortBy=id&orderBy=ASC"
       )
       .then((resp) => resp.data.products);
@@ -43,7 +46,7 @@ function Main() {
             ))}
           </div>
         ) : (
-          data.map((product: any) => (
+          data.map((product: Product) => (
             // Renderização dos produtos da loja
             <ProductCard
               key={product.id}

@@ -1,16 +1,17 @@
-"use client"
+"use client";
 import React, { useContext } from "react";
 import styles from "./cart.module.scss";
 import CartItem from "../CartItem";
-import { appContext } from "@/app/contexts/context";
+import { appContext, AppContextType } from "@/app/contexts/context";
 
 function Cart() {
   // Context para receber dados do carrinho e alterar status de exibição do carrinho
-  const { cartItems, cartIsVisible, setCartIsVisible } = useContext(appContext);
+  const { cartItems, cartIsVisible, setCartIsVisible } = useContext<AppContextType>(appContext);
 
   // Função para fechar o carrinho
-  const closeCart = () => {
+  const closeCart = (): void => {
     setCartIsVisible(false);
+    console.log(cartItems)
   };
 
   return (
@@ -34,7 +35,7 @@ function Cart() {
         />
       ))}
       {/* Resumo da compra */}
-      <div>Resumo cart</div>
+      <div>.</div>
     </section>
   );
 }
