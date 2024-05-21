@@ -1,8 +1,10 @@
-import { Product } from "@/app/components/Main/index";
+import { useContext } from "react";
 import Image from "next/image";
+
 import styles from "./productCard.module.scss";
 import ButtonProduct from "../ButtonProduct";
-import { useContext } from "react";
+import { Product } from "@/app/components/Main/index";
+
 import { appContext, AppContextType } from "@/app/contexts/context";
 
 function ProductCard({
@@ -17,35 +19,23 @@ function ProductCard({
   let priceNumber: string = parseInt(price).toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
+
   });
 
   // Context para receber e alterar dados do carrinho
-  const { cartItems, setCartItems } = useContext<AppContextType>(appContext);
+  const { cartItems, setCartItems, addItemsInCart } = useContext<AppContextType>(appContext);
 
   // Função responsável por adicionar novos itens ao carrinho
-  const handleAddCart = (): void => {
-    // if (!cartItems.filter((product) => product.id == id)) {
-    // return console.log("já tem");
-    // }
-    const itemIsInCart = cartItems.some((product) => product.id == id)
-    if(itemIsInCart){
+  const handleAddNewItemInCart = (id: number) => {
+    const itemIsInCart = cartItems.some((product) => product.id == id);
+    if (itemIsInCart) return addItemsInCart(id);
 
-     return console.log("já tem")
-     // setCartItems([
-      //   ...cartItems,
-      //   { id, name, description, photo, price, quantity },
-      // ]); 
-    }
+    // Adicionando novo item
     setCartItems([
       ...cartItems,
       { id, name, description, photo, price, quantity },
-    ]); 
-    return console.log("n tem")    // const filtro = cartItems.filter((product) => product.id == id);
-    
-    // console.log(filtro);
-
-    // return console.log("n tem");
+    ]);
   };
 
   return (
@@ -58,7 +48,10 @@ function ProductCard({
         </div>
         <p>{description}</p>
       </div>
-      <ButtonProduct title="Comprar" onClick={() => handleAddCart()} />
+      <ButtonProduct
+        title="Comprar"
+        onClick={() => handleAddNewItemInCart(id)}
+      />
     </div>
   );
 }

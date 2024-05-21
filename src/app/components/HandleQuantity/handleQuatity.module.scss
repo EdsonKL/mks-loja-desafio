@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  //   flex-direction: row;
+  width: 60px;
+  padding: 0 6px;
+  margin: 0 auto;
+  margin-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+
+  span {
+    padding: 0 2px;
+    color: #b2b2b2;
+  }
+  p {
+    padding: 0 5px;
+    margin: 0;
+    font-size: 15px;
+  }
+  button {
+    // padding: 2px 4px;
+    background-color: white;
+    border: none;
+    // border-radius: 5px;
+    cursor: pointer;
+  }
+}

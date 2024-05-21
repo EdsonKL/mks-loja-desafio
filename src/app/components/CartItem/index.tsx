@@ -1,17 +1,23 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import styles from "./cartItem.module.scss";
 import Image from "next/image";
+import HandleQuantity from "../HandleQuantity";
+import { AppContextType, appContext } from "@/app/contexts/context";
 
 // Definindo os tipos das props
-interface CartItemProps {
+export interface CartItemProps {
+  id: number;
   photo: string;
   title: string;
-  price: number;
+  price: string | number;
   quantity: number;
 }
 
 // Criação de componente para exibição de items do carrinho
-function CartItem({ photo, title, price, quantity }: CartItemProps) {
+function CartItem({ photo, title, price, quantity, id }: CartItemProps) {
+  const { deleteItemInCart } = useContext<AppContextType>(appContext);
+
   return (
     <section className={styles.cardItem}>
       <Image
@@ -22,9 +28,11 @@ function CartItem({ photo, title, price, quantity }: CartItemProps) {
         height={70}
       />
       <h3>{title}</h3>
-      <p>|- {quantity} +|</p>
+      <HandleQuantity id={id} quantity={quantity} />
       <h2>R$ {price}</h2>
-      <button className={styles.buttonClose}>x</button>
+      <button onClick={() => deleteItemInCart(id)} className={styles.buttonClose}>
+        x
+      </button>
     </section>
   );
 }

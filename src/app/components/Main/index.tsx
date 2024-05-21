@@ -55,7 +55,7 @@ function Main() {
               description={product.description}
               photo={product.photo}
               price={product.price}
-              quantity={product.quantity}
+              quantity={1}
             />
           ))
         )}

@@ -35,10 +35,12 @@
   //   padding: 20px 40px;
   border-left: 1px solid white;
   gap: 20px;
+  transition: all 0.5s ease;
+  overflow: auto;
 }
 .open {
-  display: block;
+  transform: translate(0, 0);
 }
 .close {
-  display: none;
+  transform: translate(110%, 0);
 }
