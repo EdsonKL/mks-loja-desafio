@@ -1,5 +1,5 @@
 .cardItem {
-  padding: 5px 20px;
+  padding: 5px 15px;
   margin: 10px 50px;
   height: 95px;
   display: flex;
@@ -17,8 +17,9 @@
     width: 120px;
   }
   h2 {
-    font-size: 15px;
-    width: 120px;
+    font-size: 13px;
+    margin-left: 6px;
+    width: 110px;
   }
 }
 .buttonClose {
@@ -27,12 +28,12 @@
   align-items: center;
   position: relative;
   top: -45px;
-  right: -28px;
+  right: -21px;
   background-color: black;
   color: white;
   border-radius: 100%;
-  width: 28px;
-  height: 23px;
+  width: 36px;
+  height: 21px;
   border: none;
   cursor: pointer;
   font-size: 16px;

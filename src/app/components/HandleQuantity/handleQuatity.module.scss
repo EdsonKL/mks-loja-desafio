@@ -1,10 +1,9 @@
 .container {
   display: flex;
-  //   flex-direction: row;
-  width: 60px;
+//   width: 70px;
   padding: 0 6px;
-  margin: 0 auto;
-  margin-right: 10px;
+  margin: 0 10px;
+//   margin-right: 10px;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #b2b2b2;
@@ -15,15 +14,15 @@
     color: #b2b2b2;
   }
   p {
-    padding: 0 5px;
-    margin: 0;
+    padding: 0 auto;
+    margin: 0 auto;
+    width: 30px;
     font-size: 15px;
   }
   button {
-    // padding: 2px 4px;
+    padding: 2px 4px;
     background-color: white;
     border: none;
-    // border-radius: 5px;
     cursor: pointer;
   }
 }
