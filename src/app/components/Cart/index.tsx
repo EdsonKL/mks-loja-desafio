@@ -14,6 +14,7 @@ function Cart() {
     console.log(cartItems);
   };
 
+  // Variável para exibir o valor total do carrinho
   const totalPrice = cartItems.reduce((acc, price) => {
     return parseInt(price.price) * price.quantity + acc;
   }, 0);
