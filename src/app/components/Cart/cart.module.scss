@@ -1,4 +1,20 @@
 @import "../../styles/globalSass.module.scss";
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  background-color: $primary-color;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  //   padding: 20px 40px;
+  border-left: 1px solid white;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
 .header {
   display: flex;
   align-items: center;
@@ -24,23 +40,53 @@
     font-size: 24px;
   }
 }
-.cart {
-  width: 100%;
-  max-width: 480px;
-  background-color: $primary-color;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  //   padding: 20px 40px;
-  border-left: 1px solid white;
-  gap: 20px;
-  transition: all 0.5s ease;
-  overflow: auto;
-}
 .open {
   transform: translate(0, 0);
 }
 .close {
   transform: translate(110%, 0);
+}
+.withoutItems {
+  font-size: 20px;
+  width: 100%;
+  padding-left: 50px;
+  color: white;
+}
+.cartItems {
+  height: auto;
+  overflow: auto;
+}
+
+.CartFooter {
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+}
+.totalPrice {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+.finishShop {
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 100%;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 15px 10px;
+    cursor: pointer;
+  }
 }
